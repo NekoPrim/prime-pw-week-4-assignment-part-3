@@ -34,9 +34,8 @@ console.log('items in the basket:', basket);
 
 function listItems(item) {
     console.log('in listItems');
-    let x = 0;
-    for (x in item) {
-        console.log(item[x]);
+    for (let x of item) {
+        console.log(x);
     }
     return 'thats it';
 }
@@ -47,13 +46,16 @@ console.log(listItems(basket));
 
 console.log('empty the basket');
 
+//i made the function an expression instead of a declaration because
+//the declaration emptied out all my previous 'basket' arrays
+
 empty = function (item) {
     console.log('in empty');
     while (item.length > 0) {
         item.pop();
     }
     return 'array is empty';
-}
+};
 
 console.log(empty(basket));
 
@@ -71,6 +73,7 @@ console.log('maximum items:', maxItems);
 //question 2
 
 function full(item) {
+    console.log('in full');
     if (item < maxItems) {
         console.log('value is more than', maxItems);
         return false;
@@ -91,3 +94,34 @@ console.log(full(basket));
 
 //question 3
 
+let isFull = addItem;
+
+isFull = function (item) {
+    console.log('in isFull');
+    if (item.length >= maxItems) {
+        console.log('no more room!');
+        return false;
+    }
+    else if (item.length < maxItems) {
+        console.log(addItem(item));
+        item.push('napkins');
+        return true;
+    }
+};
+
+console.log(isFull(basket));
+
+console.log('items in basket:', basket);
+
+console.log('empty basket');
+console.log(empty(basket));
+
+console.log('items in basket:', basket);
+
+console.log('add some items to basket');
+
+console.log(isFull(basket));
+
+console.log('items in basket:', basket);
+
+//question 4
