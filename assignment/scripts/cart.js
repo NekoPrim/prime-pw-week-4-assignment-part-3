@@ -53,3 +53,30 @@ empty = function(item) {
 console.log(empty(basket));
 
 console.log('items in basket:', basket);
+
+//****stretch****//
+
+//using functions in other functions
+//question 1
+const maxItems = 5;
+
+console.log('maximum items:', maxItems);
+
+function full(item) {
+    if (item < maxItems) {
+        console.log('value is less than 5')
+        return false;
+    }
+    else if (item => maxItems) {
+        console.log('value is equal to or greater than 5')
+        return true;
+    }
+}
+
+console.log(full(basket));
+
+basket = ['wine', 'glasses', 'plates', 'cheese', 'grapes', 'blanket'];
+
+console.log('items in basket:', basket);
+
+console.log(full(basket));
