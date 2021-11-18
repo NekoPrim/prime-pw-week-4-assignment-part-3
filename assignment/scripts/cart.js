@@ -17,6 +17,8 @@ function addItem(item) {
     return true;
 }
 
+console.log('adding an item to the basket');
+
 console.log(addItem(basket));
 
 console.log(basket);
@@ -24,8 +26,6 @@ console.log(basket);
 console.log('items in the basket:', basket);
 
 //create a function called 'listItems'
-
-console.log('adding an item to the basket');
 
 console.log('adding more fruit to basket');
 basket.push('pineapple', 'guava', 'dragonfruit');
@@ -63,6 +63,7 @@ console.log('items in basket:', basket);
 
 //using functions in other functions
 //question 1
+
 const maxItems = 5;
 
 console.log('maximum items:', maxItems);
