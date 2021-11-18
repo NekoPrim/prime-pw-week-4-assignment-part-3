@@ -25,6 +25,9 @@ console.log('items in the basket:', basket);
 
 //create a function called 'listItems'
 
+console.log('adding an item to the basket');
+
+console.log('adding more fruit to basket');
 basket.push('pineapple', 'guava', 'dragonfruit');
 
 console.log('items in the basket:', basket);
@@ -42,7 +45,9 @@ console.log(listItems(basket));
 
 //create a function called 'empty'
 
-empty = function(item) {
+console.log('empty the basket');
+
+empty = function (item) {
     console.log('in empty');
     while (item.length > 0) {
         item.pop();
@@ -62,13 +67,15 @@ const maxItems = 5;
 
 console.log('maximum items:', maxItems);
 
+//question 2
+
 function full(item) {
     if (item < maxItems) {
-        console.log('value is less than 5')
+        console.log('value is more than', maxItems);
         return false;
     }
     else if (item => maxItems) {
-        console.log('value is equal to or greater than 5')
+        console.log('value is equal to or greater than', maxItems);
         return true;
     }
 }
@@ -80,3 +87,6 @@ basket = ['wine', 'glasses', 'plates', 'cheese', 'grapes', 'blanket'];
 console.log('items in basket:', basket);
 
 console.log(full(basket));
+
+//question 3
+
