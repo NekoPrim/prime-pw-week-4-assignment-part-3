@@ -94,16 +94,16 @@ console.log(full(basket));
 
 //question 3
 
-let isFull = addItem;
+console.log('can more items be added to the basket?');
 
-isFull = function (item) {
+let isFull = function (item) {
     console.log('in isFull');
     if (item.length >= maxItems) {
         console.log('no more room!');
         return false;
     }
     else if (item.length < maxItems) {
-        console.log(addItem(item));
+        addItem(item);
         item.push('napkins');
         return true;
     }
@@ -125,3 +125,17 @@ console.log(isFull(basket));
 console.log('items in basket:', basket);
 
 //question 4
+
+console.log('add some more stuff to the basket');
+console.log(isFull(basket));
+
+console.log('items in basket:', basket);
+
+console.log('basket is too heavy, dont need double!');
+
+function removeItem(item) {
+    console.log('in removeItem');
+    return;
+}
+
+console.log(removeItem(basket));
