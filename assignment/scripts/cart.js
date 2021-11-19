@@ -16,13 +16,13 @@ console.log('items in the basket:', basket);
 
 function addItem(item) {
     console.log('in addItem');
-    item.push('mango');
+    basket.push(item);
     return true;
 }
 
 console.log('adding an item to the basket');
 
-console.log(addItem(basket));
+console.log(addItem('mango'));
 
 console.log(basket);
 
@@ -35,15 +35,14 @@ basket.push('pineapple', 'guava', 'dragonfruit');
 
 console.log('items in the basket:', basket);
 
-function listItems(item) {
+function listItems() {
     console.log('in listItems');
-    for (let x of item) {
+    for (let x of basket) {
         console.log(x);
     }
-    return 'thats it';
 }
 
-console.log(listItems(basket));
+listItems();
 
 //create a function called 'empty'
 
@@ -52,15 +51,12 @@ console.log('empty the basket');
 //i made the function an expression instead of a declaration because
 //the declaration emptied out all my previous 'basket' arrays
 
-const empty = function(item) {
+function empty() {
     console.log('in empty');
-    while (item.length > 0) {
-        item.pop();
-    }
-    return 'array is empty';
-};
+    basket = [];
+}
 
-console.log(empty(basket));
+console.log(empty());
 
 console.log('items in basket:', basket);
 

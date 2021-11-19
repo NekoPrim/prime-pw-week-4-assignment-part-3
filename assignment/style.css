@@ -47,7 +47,7 @@ header {
 }
 
 ul {
-    padding-left: 20rem;
+    list-style-position: inside;
 }
 
 .tumble {
