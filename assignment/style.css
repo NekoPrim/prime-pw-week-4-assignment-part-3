@@ -1,0 +1,70 @@
+body {
+    background-image: url("images/westernScene.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    background-color: blanchedalmond;
+    color: brown;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    opacity: 0.4;
+    text-align: center;
+}
+
+.sun {
+    animation-direction: alternate;
+    animation-duration: 10s;
+    animation-name: upDown;
+    animation-iteration-count: infinite;
+    border: 10px dotted yellow;
+    border-radius: 70px;
+    float: right;
+    margin-right: 10rem;
+    margin-top: -5rem;
+    position: relative;
+    width: 5%;
+}
+
+@keyframes upDown {
+    0%, 100% {top: 0rem;}
+    50% {top: 3rem;}
+}
+
+.questions {
+    background: blanchedalmond;
+   color: chocolate;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-top: 4rem;
+    opacity: 0.4;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-align: center;
+}
+
+ul {
+    padding-left: 20rem;
+}
+
+.tumble {
+    animation-direction: normal;
+    animation-duration: 15s;
+    animation-name: leftRight;
+    animation-iteration-count: infinite;
+    border-radius: 70px;
+    bottom: 1rem;
+    position: fixed;
+    width: 10%;
+}
+
+@keyframes leftRight {
+    0% {left: -5rem; bottom: 4rem;}
+    25% {left: 15rem; bottom: 0rem;}
+    50% {left: 45rem; bottom: 4rem;}
+    75% {left: 50rem; bottom: 0rem;}
+    100% {left: 100rem; bottom: 4rem;}
+}
