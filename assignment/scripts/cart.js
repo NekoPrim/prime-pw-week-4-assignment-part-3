@@ -56,7 +56,7 @@ function empty() {
     basket = [];
 }
 
-console.log(empty());
+empty();
 
 console.log('items in basket:', basket);
 
@@ -71,57 +71,28 @@ console.log('maximum items:', maxItems);
 
 //question 2
 
-function full(item) {
-    console.log('in full');
-    if (item < maxItems) {
-        console.log('value is more than', maxItems);
+function isFull() {
+    console.log('in isfull');
+    if (basket.length < maxItems) {
         return false;
     }
-    else if (item => maxItems) {
-        console.log('value is equal to or greater than', maxItems);
+    else if (basket.length >= maxItems) {
         return true;
     }
 }
 
-console.log(full(basket));
+console.log('basket is full:', isFull());
 
 basket = ['wine', 'glasses', 'plates', 'cheese', 'grapes', 'blanket'];
 
 console.log('items in basket:', basket);
 
-console.log(full(basket));
+console.log(isFull());
 
 //question 3
 
 console.log('can more items be added to the basket?');
 
-const isFull = function(item) {
-    console.log('in isFull');
-    if (item.length >= maxItems) {
-        console.log('no more room!');
-        return false;
-    }
-    else if (item.length < maxItems) {
-        addItem(item);
-        item.push('napkins');
-        return true;
-    }
-};
-
-console.log(isFull(basket));
-
-console.log('items in basket:', basket);
-
-console.log('empty basket');
-console.log(empty(basket));
-
-console.log('items in basket:', basket);
-
-console.log('add some items to basket');
-
-console.log(isFull(basket));
-
-console.log('items in basket:', basket);
 
 //question 4
 
@@ -140,7 +111,7 @@ function removeItem(item) {
         if (item.indexOf(x) !== x) {
             console.log('match!');
         }
-    }   
+    }
 }
 
 console.log(removeItem(basket));
