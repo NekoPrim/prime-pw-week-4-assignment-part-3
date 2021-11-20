@@ -5,14 +5,18 @@ console.log('***** Cart Functions *****');
 
 //create a global variable named 'basket' and set it to an empty array
 
-const basket = [];
+let basket = [];
 console.log(basket);
+
+//stretch variable maxItems
+
 const maxItems = 5;
 
 console.log('items in the basket:', basket);
 console.log('maximum items:', maxItems);
 
 //create a function called 'addItem'
+//stretch isFull in addItem
 
 const addItem = (item) => {
     console.log('in addItem');
@@ -45,6 +49,8 @@ console.log('adding more fruit to basket');
 addItem('pineapple');
 addItem('guava');
 addItem('dragonfruit');
+addItem('pomegranate');
+addItem('napkins');
 
 console.log('items in the basket:', basket);
 
@@ -57,20 +63,7 @@ const listItems = () => {
 
 listItems();
 
-//create a function called 'empty'
-
-console.log('empty the basket');
-
-const empty = () => {
-    console.log('in empty');
-    basket = [];
-}
-
-empty();
-
-console.log('items in basket:', basket);
-
-//****stretch****//
+//stretch isFull function
 
 const isFull = () => {
     console.log('in isfull');
@@ -84,28 +77,7 @@ const isFull = () => {
 
 console.log('basket is full:', isFull());
 
-console.log('add items to the basket');
-addItem('apples');
-addItem('apples');
-addItem('pears');
-addItem('bananas');
-addItem('bananas');
-addItem('grapes');
-
-console.log('items in basket:', basket);
-
-console.log('basket is full:', isFull());
-
-//question 3
-
-console.log('can more items be added to the basket?');
-addItem('napkins');
-
-console.log(isFull());
-
-console.log('items in basket:', basket);
-
-//question 4
+//stretch RemoveItem function
 
 const removeItem = (item) => {
     console.log('in removeItem');
@@ -119,12 +91,25 @@ const removeItem = (item) => {
     }
 };
 
-console.log(removeItem('apples'));
+console.log(removeItem('pomegranate'));
 
 console.log(basket);
 
-console.log(removeItem('bananas'));
+console.log(removeItem('watermelon'));
 
-console.log(basket);
+console.log('basket is full:', isFull());
 
-console.log(removeItem('mangos'));
+//create a function called 'empty'
+
+console.log('empty the basket');
+
+function empty() {
+    console.log('in empty');
+    basket = [];
+}
+
+empty();
+
+console.log('items in basket:', basket);
+
+
