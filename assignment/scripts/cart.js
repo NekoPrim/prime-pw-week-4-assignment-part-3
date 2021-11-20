@@ -5,7 +5,8 @@ console.log('***** Cart Functions *****');
 
 //create a global variable named 'basket' and set it to an empty array
 
-let basket = [];
+const basket = [];
+console.log(basket);
 const maxItems = 5;
 
 console.log('items in the basket:', basket);
@@ -13,9 +14,9 @@ console.log('maximum items:', maxItems);
 
 //create a function called 'addItem'
 
-function addItem(item) {
+const addItem = (item) => {
     console.log('in addItem');
-    function isFull() {
+    const isFull = () => {
         console.log('in isFull');
         if (basket.length < maxItems) {
             basket.push(item);
@@ -28,7 +29,7 @@ function addItem(item) {
         }
     }
     console.log(isFull());
-}
+};
 
 console.log('adding an item to the basket');
 
@@ -47,12 +48,12 @@ addItem('dragonfruit');
 
 console.log('items in the basket:', basket);
 
-function listItems() {
+const listItems = () => {
     console.log('in listItems');
     for (let x of basket) {
         console.log(x);
     }
-}
+};
 
 listItems();
 
@@ -60,7 +61,7 @@ listItems();
 
 console.log('empty the basket');
 
-function empty() {
+const empty = () => {
     console.log('in empty');
     basket = [];
 }
@@ -71,7 +72,7 @@ console.log('items in basket:', basket);
 
 //****stretch****//
 
-function isFull() {
+const isFull = () => {
     console.log('in isfull');
     if (basket.length < maxItems) {
         return false;
@@ -79,7 +80,7 @@ function isFull() {
     else if (basket.length >= maxItems) {
         return true;
     }
-}
+};
 
 console.log('basket is full:', isFull());
 
@@ -106,7 +107,7 @@ console.log('items in basket:', basket);
 
 //question 4
 
-function removeItem(item) {
+const removeItem = (item) => {
     console.log('in removeItem');
     if (basket.indexOf(item) >= 0) { 
         y = basket.indexOf(item);
@@ -116,7 +117,7 @@ function removeItem(item) {
     if (basket.indexOf(item) < 0) {
         return 'null';
     }
-}
+};
 
 console.log(removeItem('apples'));
 
