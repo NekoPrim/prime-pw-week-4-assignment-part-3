@@ -5,24 +5,32 @@ console.log('***** Cart Functions *****');
 
 //create a global variable named 'basket' and set it to an empty array
 
-
-//i noticed when i first load the page, my array show 0, but when i refresh
-//the page, values in the array returned
 let basket = [];
+const maxItems = 5;
 
 console.log('items in the basket:', basket);
+console.log('maximum items:', maxItems);
 
 //create a function called 'addItem'
 
 function addItem(item) {
     console.log('in addItem');
-    basket.push(item);
-    return true;
+    function isFull() {
+        console.log('in isFull');
+        if (basket.length < maxItems) {
+            basket.push(item);
+            return true;
+        }
+        else if (basket.length >= maxItems) {
+            return false;
+        }
+    }
+    console.log(isFull());
 }
 
 console.log('adding an item to the basket');
 
-console.log(addItem('mango'));
+addItem('mango');
 
 console.log(basket);
 
@@ -31,7 +39,9 @@ console.log('items in the basket:', basket);
 //create a function called 'listItems'
 
 console.log('adding more fruit to basket');
-basket.push('pineapple', 'guava', 'dragonfruit');
+addItem('pineapple');
+addItem('guava');
+addItem('dragonfruit');
 
 console.log('items in the basket:', basket);
 
@@ -48,9 +58,6 @@ listItems();
 
 console.log('empty the basket');
 
-//i made the function an expression instead of a declaration because
-//the declaration emptied out all my previous 'basket' arrays
-
 function empty() {
     console.log('in empty');
     basket = [];
@@ -61,15 +68,6 @@ empty();
 console.log('items in basket:', basket);
 
 //****stretch****//
-
-//using functions in other functions
-//question 1
-
-const maxItems = 5;
-
-console.log('maximum items:', maxItems);
-
-//question 2
 
 function isFull() {
     console.log('in isfull');
@@ -83,35 +81,44 @@ function isFull() {
 
 console.log('basket is full:', isFull());
 
-basket = ['wine', 'glasses', 'plates', 'cheese', 'grapes', 'blanket'];
+basket = ['apples', 'pears', 'bananas', 'apples', 'grapes', 'bananas'];
 
 console.log('items in basket:', basket);
 
-console.log(isFull());
+console.log('basket is full:', isFull());
 
 //question 3
 
 console.log('can more items be added to the basket?');
+addItem('napkins');
 
-
-//question 4
-
-console.log('add some more stuff to the basket');
-console.log(isFull(basket));
-basket.push('1 book')
+console.log(isFull());
 
 console.log('items in basket:', basket);
 
-console.log('basket is too heavy, dont need double!');
+//question 4
 
 function removeItem(item) {
     console.log('in removeItem');
-    for (let x of item) {
-        console.log('in loop', x);
-        if (item.indexOf(x) !== x) {
-            console.log('match!');
+    for (let x of basket) {
+        if (x === item) {
+            y = basket.indexOf(item);
+            basket.splice(y, 1);
+            return 'removed item: ' + item;
+        }
+        if (x !== item && x === basket[basket.length - 1]) {
+            console.log(`${item} is not in this array`);
+            return 'null';
         }
     }
 }
 
-console.log(removeItem(basket));
+console.log(removeItem('apples'));
+
+console.log(basket);
+
+console.log(removeItem('bananas'));
+
+console.log(basket);
+
+console.log(removeItem('mangos'));
