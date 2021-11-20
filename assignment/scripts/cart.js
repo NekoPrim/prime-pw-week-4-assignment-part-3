@@ -106,7 +106,7 @@ function removeItem(item) {
             basket.splice(y, 1);
             return 'removed item: ' + item;
         }
-        if (x !== item && x === basket[basket.length - 1]) {
+        if (x != item && x === basket[basket.length - 1]) {
             console.log(`${item} is not in this array`);
             return 'null';
         }
