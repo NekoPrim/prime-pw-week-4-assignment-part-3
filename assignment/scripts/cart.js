@@ -19,9 +19,11 @@ function addItem(item) {
         console.log('in isFull');
         if (basket.length < maxItems) {
             basket.push(item);
+            console.log(`added ${item}`);
             return true;
         }
         else if (basket.length >= maxItems) {
+            console.log(`${item} can not be added`)
             return false;
         }
     }
@@ -81,7 +83,13 @@ function isFull() {
 
 console.log('basket is full:', isFull());
 
-basket = ['apples', 'pears', 'bananas', 'apples', 'grapes', 'bananas'];
+console.log('add items to the basket');
+addItem('apples');
+addItem('apples');
+addItem('pears');
+addItem('bananas');
+addItem('bananas');
+addItem('grapes');
 
 console.log('items in basket:', basket);
 
@@ -100,16 +108,13 @@ console.log('items in basket:', basket);
 
 function removeItem(item) {
     console.log('in removeItem');
-    for (let x of basket) {
-        if (x === item) {
-            y = basket.indexOf(item);
-            basket.splice(y, 1);
-            return 'removed item: ' + item;
-        }
-        if (x != item && x === basket[basket.length - 1]) {
-            console.log(`${item} is not in this array`);
-            return 'null';
-        }
+    if (basket.indexOf(item) >= 0) { 
+        y = basket.indexOf(item);
+        basket.splice(y, 1);
+        return 'removed item: ' + item;
+    }
+    if (basket.indexOf(item) < 0) {
+        return 'null';
     }
 }
 
