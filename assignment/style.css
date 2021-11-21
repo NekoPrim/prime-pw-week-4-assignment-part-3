@@ -26,6 +26,7 @@ header {
     margin-top: -5rem;
     position: relative;
     width: 5%;
+    z-index: 1;
 }
 
 @keyframes upDown {
@@ -67,6 +68,6 @@ ul {
     0% {left: -10rem; bottom: 4rem;}
     25% {left: 15rem; bottom: 0rem;}
     50% {left: 45rem; bottom: 4rem;}
-    75% {left: 50rem; bottom: 0rem;}
-    100% {left: 110rem; bottom: 4rem;}
+    75% {left: 70rem; bottom: 0rem;}
+    100% {left: 150rem; bottom: 4rem;}
 }
