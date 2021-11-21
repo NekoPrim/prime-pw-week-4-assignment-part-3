@@ -5,7 +5,7 @@ console.log('***** Cart Functions *****');
 
 //create a global variable named 'basket' and set it to an empty array
 
-let basket = [];
+const basket = [];
 console.log(basket);
 
 //stretch variable maxItems
@@ -18,16 +18,16 @@ console.log('maximum items:', maxItems);
 //create a function called 'addItem'
 //stretch isFull in addItem
 
-const addItem = (item) => {
+const addItem = (item, array) => {
     console.log('in addItem');
     const isFull = () => {
         console.log('in isFull');
-        if (basket.length < maxItems) {
-            basket.push(item);
+        if (array.length < maxItems) {
+            array.push(item);
             console.log(`added ${item}`);
             return true;
         }
-        else if (basket.length >= maxItems) {
+        else if (array.length >= maxItems) {
             console.log(`${item} can not be added`)
             return false;
         }
@@ -37,7 +37,7 @@ const addItem = (item) => {
 
 console.log('adding an item to the basket');
 
-addItem('mango');
+addItem('mango', basket);
 
 console.log(basket);
 
@@ -46,11 +46,10 @@ console.log('items in the basket:', basket);
 //create a function called 'listItems'
 
 console.log('adding more fruit to basket');
-addItem('pineapple');
-addItem('guava');
-addItem('dragonfruit');
-addItem('pomegranate');
-addItem('napkins');
+addItem('pineapple', basket);
+addItem('guava', basket);
+addItem('dragonfruit', basket);
+addItem('pomegranate', basket)
 
 console.log('items in the basket:', basket);
 
@@ -65,50 +64,53 @@ listItems();
 
 //stretch isFull function
 
-const isFull = () => {
+const isFull = (array) => {
     console.log('in isfull');
-    if (basket.length < maxItems) {
+    if (array.length < maxItems) {
         return false;
     }
-    else if (basket.length >= maxItems) {
+    else if (array.length >= maxItems) {
         return true;
     }
 };
 
-console.log('basket is full:', isFull());
+console.log('basket is full:', isFull(basket));
 
 //stretch RemoveItem function
 
-const removeItem = (item) => {
+const removeItem = (item, array) => {
     console.log('in removeItem');
-    if (basket.indexOf(item) >= 0) { 
-        y = basket.indexOf(item);
-        basket.splice(y, 1);
+    if (array.indexOf(item) >= 0) { 
+        y = array.indexOf(item);
+        array.splice(y, 1);
         return 'removed item: ' + item;
     }
-    if (basket.indexOf(item) < 0) {
+    if (array.indexOf(item) < 0) {
         return 'null';
     }
 };
 
-console.log(removeItem('pomegranate'));
+console.log(removeItem('pomegranate', basket));
 
 console.log(basket);
 
-console.log(removeItem('watermelon'));
+console.log(removeItem('watermelon', basket));
 
-console.log('basket is full:', isFull());
+console.log('basket is full:', isFull(basket));
 
 //create a function called 'empty'
 
 console.log('empty the basket');
 
-function empty() {
+const empty = (array) => {
     console.log('in empty');
-    basket = [];
+    while (array.length > 0) {
+        array.pop();
+    }
+    return array;
 }
 
-empty();
+empty(basket);
 
 console.log('items in basket:', basket);
 
